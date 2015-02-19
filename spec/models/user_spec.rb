@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe :validations do
+    it { should have_many :trysts }
+  end
+  
 end

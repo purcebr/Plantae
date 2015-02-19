@@ -16,6 +16,8 @@ gem 'turbolinks'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'sidekiq'
 
 gem 'haml'
 gem 'puma'
@@ -26,7 +28,7 @@ gem 'omniauth'
 gem 'devise-bootstrap-views'
 
 gem 'doorkeeper',   '~> 2.0.1'
-# gem 'wine_bouncer'
+gem 'wine_bouncer'
 
 gem 'kaminari'
 gem 'grape'

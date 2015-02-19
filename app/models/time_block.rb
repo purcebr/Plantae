@@ -31,6 +31,10 @@ class TimeBlock < ActiveRecord::Base
     start_time + length_s + pauses_length
   end
 
+  def remaining_s
+    end_time.to_i - Time.now.to_i 
+  end
+
   def pauses_length
     pauses.any? && pauses.pluck(:length_s).reduce(:+) || 0
   end

@@ -21,8 +21,12 @@ class Tryst < ActiveRecord::Base
     else
       length_s = break_length_s
     end
-
+    schedule_recreate(length_s)
     TimeBlock.create(:is_pom => is_pom, :tryst_id => id, :start_time => start_time, :length_s => length_s)
+  end
+
+  def schedule_recreate(length_s=last_time_block.remaining_s)
+    CreateNextTimeBlockJob.set(wait: length_s.seconds).perform_later(self)
   end
 
   def last_time_block

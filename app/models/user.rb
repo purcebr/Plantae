@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable
-
+  has_many :trysts
+  
   def display_name
     email
   end
