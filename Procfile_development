@@ -1,0 +1,2 @@
+custom_web: bundle exec puma -b 'tcp://0.0.0.0:6968' -C config/puma.rb
+log: tail -f log/development.log
